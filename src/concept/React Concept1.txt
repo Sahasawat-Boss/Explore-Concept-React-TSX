@@ -1,0 +1,61 @@
+In React
+- index.html script tag import here
+ index.html (Public Entry Point)
+    - The index.html file is located in the public folder (or directly in the project root, depending on the setup). It is the base HTML file where React mounts the app.
+
+    - It has an empty <div id="root"></div> that acts as the container for the React app.
+
+    - A <script> tag loads the main.tsx (or main.js) file, which starts the React app.
+
+    <body>
+        <div id="root"></div>  <!-- React App will be rendered here -->
+        <script type="module" src="/src/main.tsx"></script>
+    </body>
+
+
+    - The <div id="root"></div> acts as the mounting point for the React app.
+    - The script loads src/main.tsx, which injects the React app into the root div.
+
+--------------------------------------------------------
+- src
+- src/main.tsx
+main.tsx (Entry Point of React)
+    - The main.tsx file is responsible for injecting React components into index.html.
+
+    >> React Code put in to index.html
+    >> Get Root element and Render an application
+
+    createRoot(document.getElementById('root')!).render(
+        <StrictMode>
+            <App />
+        </StrictMode>,
+    )
+
+    Key Points
+   -  Imports React – Needed to use React components.
+    - Imports createRoot – This is used to render React in index.html.
+    - Gets the Root Element – document.getElementById("root")!
+    - Renders the App – The <App /> component is placed inside StrictMode for better debugging.
+
+
+Component
+- src/App.tsx
+App.tsx (Main Component)
+    - The App.tsx is a React component, written as a function. It is the main component of the application.
+
+
+    >> function and export
+    >> Capital letter is a function
+
+    Key Points
+    - A React component must start with a capital letter (App).
+    - This function returns JSX (<h1>...</h1>).
+    - The export default App; statement makes this component available for import in main.tsx.
+
+--------------------------------------------------------
+Component
+- only return one element
+- Wrap everything for tag or fragment <> (empty tag)
+
+--------------------------------------------------------
+{} << this will run as javascript code
